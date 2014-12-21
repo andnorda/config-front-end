@@ -1,0 +1,19 @@
+{
+  "name": "config-front-end",
+  "version": "1.0.0",
+  "description": "front end for config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andnorda/config-front-end.git"
+  },
+  "author": "Andreas Nordahl <andnorda@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andnorda/config-front-end/issues"
+  },
+  "homepage": "https://github.com/andnorda/config-front-end"
+}
