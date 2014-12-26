@@ -20,6 +20,7 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
+    "browserify": "^8.0.1",
     "connect": "^3.3.3",
     "connect-livereload": "^0.5.2",
     "del": "^1.1.1",
@@ -29,11 +30,18 @@
     "gulp-less": "^2.0.1",
     "gulp-livereload": "^3.0.2",
     "gulp-load-plugins": "^0.8.0",
+    "gulp-sourcemaps": "^1.2.8",
     "gulp-useref": "^1.0.2",
     "jshint-stylish": "^1.0.0",
     "opn": "^1.0.1",
     "serve-index": "^1.5.3",
     "serve-static": "^1.7.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
     "wiredep": "^2.2.2"
+  },
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "jquery": "^2.1.3"
   }
 }

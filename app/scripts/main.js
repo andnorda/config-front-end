@@ -1,3 +1,6 @@
+var $ = require('jquery');
+var backbone = require('backbone');
+
 /*global ConfigFrontEnd, $*/
 window.ConfigFrontEnd = {
     Models: {},
