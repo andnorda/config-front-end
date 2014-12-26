@@ -1,19 +1,8 @@
 var $ = require('jquery');
-var backbone = require('backbone');
+var Backbone = require('backbone');
+Backbone.$ = $;
 
-/*global ConfigFrontEnd, $*/
-window.ConfigFrontEnd = {
-    Models: {},
-    Collections: {},
-    Views: {},
-    Routers: {},
-    init: function () {
-        'use strict';
-        console.log('Hello from Backbone!');
-    }
-};
+var Router = require('./router');
+new Router();
 
-$(document).ready(function () {
-    'use strict';
-    ConfigFrontEnd.init();
-});
+Backbone.history.start();
