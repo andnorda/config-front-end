@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/andnorda/config-front-end/issues"
   },
-  "homepage": "https://github.com/andnorda/config-front-end"
+  "private": true,
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-less": "^2.0.1",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-useref": "^1.0.2",
+    "jshint-stylish": "^1.0.0"
+  }
 }
