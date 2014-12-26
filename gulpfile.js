@@ -1,41 +1,45 @@
 'use strict';
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var less = require('gulp-less');
+var livereload = require('gulp-livereload');
+var jshint = require('gulp-jshint');
+var gutil = require('gulp-util');
 
 gulp.task('styles', function() {
 	return gulp.src('app/styles/main.less')
-		.pipe($.less())
-		.pipe($.autoprefixer())
+		.pipe(less())
+		.on('error', gutil.log)
 		.pipe(gulp.dest('dist/styles'))
-		.pipe($.livereload());
+		.pipe(livereload());
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', ['jshint'], function() {
 	return browserify('./app/scripts/main.js')
 		.bundle()
+		.on('error', function(err) {
+			gutil.log(err.message)
+		})
 		.pipe(source('main.js'))
 		.pipe(buffer())
-		.pipe($.sourcemaps.init({loadMaps: true}))
-		.pipe($.sourcemaps.write('./'))
 		.pipe(gulp.dest('dist/scripts'))
-		.pipe($.livereload());
+		.pipe(livereload());
 });
 
 gulp.task('html', ['styles', 'scripts'], function() {
 	return gulp.src('app/*.html')
 		.pipe(gulp.dest('dist'))
-		.pipe($.livereload());
+		.pipe(livereload());
 });
 
 gulp.task('jshint', function() {
 	return gulp.src('app/scripts/**/*.js')
-		.pipe($.jshint())
-		.pipe($.jshint.reporter('jshint-stylish'))
-		.pipe($.jshint.reporter('fail'));
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'))
+		.pipe(jshint.reporter('fail'));
 });
 
 gulp.task('connect', ['build'], function() {
@@ -60,7 +64,7 @@ gulp.task('serve', ['connect', 'watch'], function() {
 gulp.task('clean', require('del').bind(null, ['dist']));
 
 gulp.task('watch', ['connect'], function() {
-	$.livereload.listen();
+	livereload.listen();
 
 	gulp.watch('app/*.html', ['html']);
 	gulp.watch('app/styles/**/*.less', ['styles']);
