@@ -1,4 +1,6 @@
+var $ = require('jquery');
 var Backbone = require('backbone');
+var ApplicationView = require('./views/application');
 
 var Router = Backbone.Router.extend({
 	routes: {
@@ -9,7 +11,9 @@ var Router = Backbone.Router.extend({
 	},
 
 	index: function() {
-		console.log('index');
+		var appView = new ApplicationView();
+		appView.render();
+		$('#app').html(appView.el);
 	},
 
 	application: function(application) {

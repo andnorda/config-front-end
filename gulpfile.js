@@ -20,9 +20,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', ['jshint'], function() {
 	return browserify('./app/scripts/main.js')
 		.bundle()
-		.on('error', function(err) {
-			gutil.log(err.message)
-		})
+		.on('error', gutil.log)
 		.pipe(source('main.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest('dist/scripts'))
