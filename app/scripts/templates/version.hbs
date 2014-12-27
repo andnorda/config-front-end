@@ -1,0 +1,13 @@
+<h1>{{name}}</h1>
+<h2>Instances:</h2>
+<ul>
+{{#each instances}}
+	<li><a href="#/applications/{{../application}}/versions/{{../name}}/instances/{{this}}">{{this}}</a></li>
+{{/each}}
+</ul>
+<h2>Property files:</h2>
+<ul>
+{{#each propertyFiles}}
+	<li><a href="#/applications/{{../application}}/versions/{{../name}}/files/{{this}}">{{this}}</a></li>
+{{/each}}
+</ul>

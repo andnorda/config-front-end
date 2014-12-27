@@ -1,1 +1,13 @@
-<h1>test</h1>
+<h1>{{name}}</h1>
+<h2>Versions:</h2>
+<ul>
+{{#each versions}}
+	<li><a href="#/applications/{{../name}}/versions/{{this}}">{{this}}</a></li>
+{{/each}}
+</ul>
+<h2>Property files:</h2>
+<ul>
+{{#each propertyFiles}}
+	<li><a href="#/applications/{{../name}}/files/{{this}}">{{this}}</a></li>
+{{/each}}
+</ul>

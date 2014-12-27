@@ -1,7 +1,7 @@
 var Backbone = require('backbone');
-var template = require('../templates/application.hbs');
+var template = require('../templates/version.hbs');
 
-var ApplicationView = Backbone.View.extend({
+var VersionView = Backbone.View.extend({
 	initialize: function() {
 		this.listenTo(this.model, 'change', this.render);
 	},
@@ -12,4 +12,4 @@ var ApplicationView = Backbone.View.extend({
 	}
 });
 
-module.exports = ApplicationView;
+module.exports = VersionView;

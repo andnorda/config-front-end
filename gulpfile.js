@@ -66,7 +66,7 @@ gulp.task('watch', ['connect'], function() {
 
 	gulp.watch('app/*.html', ['html']);
 	gulp.watch('app/styles/**/*.less', ['styles']);
-	gulp.watch('app/scripts/**/*.js', ['scripts']);
+	gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/*.hbs'], ['scripts']);
 })
 
 gulp.task('build', ['jshint', 'html']);
